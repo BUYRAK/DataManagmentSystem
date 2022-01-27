@@ -12,4 +12,4 @@ design and coding by me
 <hr>
 
 
-<img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/login_screen.png" width="30%">
+<img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/login_screen.png" width="35%">
