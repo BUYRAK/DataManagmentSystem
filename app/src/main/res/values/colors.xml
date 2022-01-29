@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <color name="colorPrimary">#FF66BB6A</color>
     <!-- Material Design - Color Palette -->
     <!-- Date: 1/15/2015 -->
     <!-- http://www.google.com/design/spec/style/color.html#color-color-palette -->

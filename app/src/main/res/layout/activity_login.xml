@@ -6,40 +6,27 @@
     android:layout_height="match_parent"
     tools:context=".LoginAndRegister.LoginActivity">
 
-    <View
-        android:id="@+id/view"
-        android:layout_width="match_parent"
-        android:layout_height="320dp"
-        android:background="@drawable/corporate"
-        android:foreground="#A6000000"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <ImageView
         android:id="@+id/imageView3"
-        android:layout_width="162dp"
-        android:layout_height="138dp"
-        android:layout_marginTop="36dp"
+        android:layout_width="wrap_content"
+        android:layout_height="320dp"
+        android:src="@drawable/corporate_background"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/cross" />
+        android:foreground="#77000000"
+        android:scaleType="centerCrop"/>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:fontFamily="@font/righteous"
-        android:text="Welcome to"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:src="@drawable/cross"
+        android:layout_marginBottom="65dp"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
+        app:layout_constraintEnd_toEndOf="@id/imageView3"
+        app:layout_constraintStart_toStartOf="@id/imageView3"
+        app:layout_constraintTop_toTopOf="@id/imageView3" />
 
     <TextView
         android:id="@+id/textView3"
@@ -47,13 +34,28 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/righteous"
+        android:text="Welcome To"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/righteous"
         android:text="Data Managment System"
         android:textColor="@color/white"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="@+id/textView2"
-        app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/textView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2" />
+
+        app:layout_constraintEnd_toEndOf="@+id/textView3"
+
+        app:layout_constraintStart_toStartOf="@+id/textView3"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
         android:id="@+id/etMail"
@@ -74,7 +76,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.505"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView3" />
 
     <EditText
         android:id="@+id/etPassword"
@@ -126,7 +128,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         app:cornerRadius="3dp"
-        app:icon="@drawable/google_brands"
+        app:icon="@drawable/ic_google_brands"
         app:iconGravity="textStart"
         app:layout_constraintEnd_toEndOf="@+id/btnLogin"
         app:layout_constraintHorizontal_bias="0.0"
@@ -144,7 +146,7 @@
         android:textAlignment="center"
         android:textAllCaps="false"
         app:cornerRadius="3dp"
-        app:icon="@drawable/google_brands"
+        app:icon="@drawable/ic_facebook_brands"
         app:iconGravity="textStart"
         app:layout_constraintEnd_toEndOf="@+id/btnLoginGoogle"
         app:layout_constraintHorizontal_bias="1.0"
@@ -163,7 +165,7 @@
         app:layout_constraintTop_toBottomOf="@+id/etPassword" />
 
     <TextView
-        android:id="@+id/txtRegister"
+        android:id="@+id/txtRegisterPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
