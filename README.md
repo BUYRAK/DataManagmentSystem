@@ -14,14 +14,9 @@ design and coding by me
 <div>
   <h4> Splash Page </h4>
 <img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/splash-screen.png" width="35%">
-</div>
-  
- <div>
-  <h4> Login Page </h4>
+    <h4> Login Page </h4>
 <img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/login-screen.png" width="35%">
-</div>
-  
-   <div>
-  <h4> Register Page </h4>
+    <h4> Register Page </h4>
 <img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/register-screen.png" width="35%">
 </div>
+  
