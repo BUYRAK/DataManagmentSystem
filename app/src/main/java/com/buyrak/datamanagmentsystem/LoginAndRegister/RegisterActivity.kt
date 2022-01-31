@@ -22,12 +22,11 @@ class RegisterActivity : AppCompatActivity() {
                     .addOnCompleteListener{
                         if (it.isSuccessful){
                             val user = User(
-                                user_id = FirebaseAuth.getInstance().currentUser!!.uid,
+                                userId = FirebaseAuth.getInstance().currentUser!!.uid,
                                 email = etMailRegister.text.toString(),
-                                name = "No Information",
-                                surname = "No Information",
+                                fullName = "No Information",
                                 phone = "No Information",
-                                profile_photo = "default_user.jpg",
+                                profilePhoto = "default_user.jpg",
                                 role = "1"
                             )
                             FirebaseDatabase.getInstance().reference

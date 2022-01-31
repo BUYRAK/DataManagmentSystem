@@ -1,12 +1,11 @@
 package com.buyrak.datamanagmentsystem.utils
 
-class User(user_id: String, email: String, name: String, surname: String, phone: String, profile_photo: String, role: String) {
+class User(userId: String, email: String, fullName: String, phone: String, profilePhoto: String, role: String) {
 
-    var user_id: String? = user_id
+    var userId: String? = userId
     var email: String? = email
-    var name: String? = name
-    var surname: String? = surname
+    var fullName: String? = fullName
     var phone: String? = phone
-    var profile_photo: String? = profile_photo
+    var profilePhoto: String? = profilePhoto
     var role: String? = role
 }
