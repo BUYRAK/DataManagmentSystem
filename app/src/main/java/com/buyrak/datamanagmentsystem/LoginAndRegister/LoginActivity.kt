@@ -13,7 +13,17 @@ class LoginActivity : AppCompatActivity() {
         txtRegisterPage.setOnClickListener {
             var intent = Intent(this@LoginActivity, RegisterActivity::class.java)
             startActivity(intent)
-            finish()
         }
+
+        txtRegisterPage.setOnClickListener {
+            startActivity(Intent(this, RegisterActivity::class.java))
+            overridePendingTransition(R.anim.right_slide, R.anim.slide_to_left)
+        }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        startActivity(Intent(this, RegisterActivity::class.java))
+        overridePendingTransition(R.anim.right_slide, R.anim.slide_to_left)
     }
 }
