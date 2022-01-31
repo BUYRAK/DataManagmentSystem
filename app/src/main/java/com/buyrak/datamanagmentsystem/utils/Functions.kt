@@ -12,6 +12,8 @@ class Functions {
             currentUser?.sendEmailVerification()?.addOnCompleteListener {
                 if (it.isSuccessful){
                     Toast.makeText(context,"You have successfully registered! please check your mailbox for confirmation.", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(context,"You have successfully registered, but the mail could not be sent, please log in and try again.", Toast.LENGTH_LONG).show()
                 }
             }
         }
