@@ -16,7 +16,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         btnLogin.setOnClickListener {
-            if (!etMail.text.isNullOrEmpty() && !etPassword.text.isNullOrEmpty()) {
+            if (!etMail.text.toString().isEmpty() && !etPassword.text.toString().isEmpty()) {
                 FirebaseAuth.getInstance()
                     .signInWithEmailAndPassword(etMail.text.toString(), etPassword.text.toString())
                     .addOnCompleteListener {
@@ -41,10 +41,7 @@ class LoginActivity : AppCompatActivity() {
                                 ).show()
                             }
                         }
-
                     }
-            }else{
-                
             }
         }
 
