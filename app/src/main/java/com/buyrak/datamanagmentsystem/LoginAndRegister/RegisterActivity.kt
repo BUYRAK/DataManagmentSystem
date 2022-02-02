@@ -53,7 +53,7 @@ class RegisterActivity : AppCompatActivity() {
                         imgEtPasswordTwoRegisterError.visibility = View.VISIBLE
                         Toast.makeText(
                             this@RegisterActivity,
-                            "Passwords do not match or incorrect.",
+                            "Passwords do not match or incorrect. Your password must be at least 8 characters.",
                             Toast.LENGTH_LONG
                         ).show()
                     }
@@ -71,6 +71,7 @@ class RegisterActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.left_slide, R.anim.slide_to_right)
         }
     }
+
 
     override fun onBackPressed() {
         super.onBackPressed()

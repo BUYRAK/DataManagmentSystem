@@ -16,38 +16,47 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         btnLogin.setOnClickListener {
-            if (!etMail.text.toString().isEmpty() && !etPassword.text.toString().isEmpty()) {
+            if (!etMail.text.isNullOrEmpty() && !etPassword.text.isNullOrEmpty()) {
                 FirebaseAuth.getInstance()
                     .signInWithEmailAndPassword(etMail.text.toString(), etPassword.text.toString())
                     .addOnCompleteListener {
-                        if (getInstance.currentUser != null) {
-                            if (getInstance.currentUser!!.isEmailVerified) {
-                                startActivity(
-                                    Intent(
-                                        this@LoginActivity,
-                                        MainActivity::class.java
-                                    ).setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                                )
-                                Toast.makeText(
+                        if(getInstance.currentUser!!.isEmailVerified) {
+                            startActivity(
+                                Intent(
                                     this@LoginActivity,
-                                    "You have successfully logged in.",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            } else {
-                                Toast.makeText(
-                                    this@LoginActivity,
-                                    "An error occurred while logging in.",
-                                    Toast.LENGTH_LONG
-                                ).show()
-                            }
+                                    MainActivity::class.java
+                                ).setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                            )
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "You have successfully logged in.",
+                                Toast.LENGTH_LONG
+                            ).show()
+                        } else {
+                            Toast.makeText(
+                                this@LoginActivity,
+                                "An error occurred while logging in.",
+                                Toast.LENGTH_LONG
+                            ).show()
                         }
                     }
+            }else{
+
+                Toast.makeText(
+                    this@LoginActivity,
+                    "Your email address or password is incorrect, please try again.",
+                    Toast.LENGTH_LONG
+                ).show()
             }
         }
 
 
         txtRegisterPage.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+            overridePendingTransition(R.anim.right_slide, R.anim.slide_to_left)
+        }
+        txtRememberPassword.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, RememberActivity::class.java))
             overridePendingTransition(R.anim.right_slide, R.anim.slide_to_left)
         }
     }

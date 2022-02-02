@@ -183,12 +183,10 @@
         android:id="@+id/imgEtMailRegisterError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/etMailRegister"
         app:layout_constraintEnd_toStartOf="@+id/etMailRegister"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/etMailRegister"
         app:srcCompat="@drawable/ic_baseline_warning_24" />
 
@@ -196,12 +194,10 @@
         android:id="@+id/imgEtPasswordRegisterError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/etPasswordRegister"
         app:layout_constraintEnd_toStartOf="@+id/etPasswordRegister"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/etPasswordRegister"
         app:srcCompat="@drawable/ic_baseline_warning_24" />
 
@@ -209,12 +205,10 @@
         android:id="@+id/imgEtPasswordTwoRegisterError"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
         android:layout_marginEnd="8dp"
         android:visibility="invisible"
         app:layout_constraintBottom_toBottomOf="@+id/etPasswordAgainRegister"
         app:layout_constraintEnd_toStartOf="@+id/etPasswordAgainRegister"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/etPasswordAgainRegister"
         app:srcCompat="@drawable/ic_baseline_warning_24" />
 

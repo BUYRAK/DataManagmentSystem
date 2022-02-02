@@ -4,6 +4,120 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LoginAndRegister.RememberActivity">
+    tools:context=".LoginAndRegister.LoginActivity">
+
+    <TextView
+        android:id="@+id/txtBackLoginScreen"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="48dp"
+        android:drawableStart="@drawable/ic_baseline_arrow_back_24"
+        android:text="Return To Login Screen"
+        android:textColor="#000000"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="@+id/btnRemember"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintStart_toStartOf="@+id/btnRemember"
+        app:layout_constraintTop_toBottomOf="@+id/btnRemember" />
+
+    <ImageView
+        android:id="@+id/imgEtMailRememberLoginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/etMailRemember"
+        app:layout_constraintEnd_toStartOf="@+id/etMailRemember"
+        app:layout_constraintTop_toTopOf="@+id/etMailRemember"
+        app:srcCompat="@drawable/ic_baseline_warning_24" />
+
+    <ImageView
+        android:id="@+id/imgViewRemember"
+        android:layout_width="wrap_content"
+        android:layout_height="300dp"
+        android:foreground="#77000000"
+        android:scaleType="centerCrop"
+        android:src="@drawable/corporate_background"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="120dp"
+        android:layout_height="120dp"
+        android:layout_marginBottom="65dp"
+        android:src="@drawable/cross"
+        app:layout_constraintBottom_toBottomOf="@+id/imgViewRemember"
+        app:layout_constraintEnd_toEndOf="@id/imgViewRemember"
+        app:layout_constraintStart_toStartOf="@id/imgViewRemember"
+        app:layout_constraintTop_toTopOf="@id/imgViewRemember" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:fontFamily="@font/righteous"
+        android:text="Data Managment System"
+        android:textColor="@color/white"
+
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/imageView4" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:fontFamily="@font/righteous"
+        android:text="Remember Password"
+
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toBottomOf="@+id/textView4" />
+
+    <EditText
+        android:id="@+id/etMailRemember"
+        android:layout_width="320dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="100dp"
+        android:background="@android:color/transparent"
+        android:cursorVisible="true"
+        android:drawableStart="@drawable/ic_baseline_email_24"
+        android:drawablePadding="5dp"
+        android:ems="10"
+        android:foreground="@drawable/round_corner_input_one"
+        android:hint=" E-mail"
+        android:inputType="textEmailAddress"
+        android:paddingStart="5dp"
+        android:textAllCaps="false"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgViewRemember" />
+
+    <Button
+        android:id="@+id/btnRemember"
+        android:layout_width="320dp"
+        android:layout_height="64dp"
+        android:layout_marginTop="36dp"
+        android:elevation="50dp"
+        android:selectAllOnFocus="false"
+        android:text="Sign In"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:cornerRadius="3dp"
+        app:icon="@drawable/ic_baseline_login_24"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etMailRemember" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

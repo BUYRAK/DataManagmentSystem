@@ -7,22 +7,44 @@
     tools:context=".LoginAndRegister.LoginActivity">
 
     <ImageView
+        android:id="@+id/imgEtMailLoginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/etMail"
+        app:layout_constraintEnd_toStartOf="@+id/etMail"
+        app:layout_constraintTop_toTopOf="@+id/etMail"
+        app:srcCompat="@drawable/ic_baseline_warning_24" />
+
+    <ImageView
+        android:id="@+id/imgEtPasswordLoginError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/etPassword"
+        app:layout_constraintEnd_toStartOf="@+id/etMail"
+        app:layout_constraintTop_toTopOf="@+id/etPassword"
+        app:srcCompat="@drawable/ic_baseline_warning_24" />
+
+    <ImageView
         android:id="@+id/imageView3"
         android:layout_width="wrap_content"
         android:layout_height="300dp"
+        android:foreground="#77000000"
+        android:scaleType="centerCrop"
         android:src="@drawable/corporate_background"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:foreground="#77000000"
-        android:scaleType="centerCrop"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/cross"
         android:layout_marginBottom="65dp"
+        android:src="@drawable/cross"
         app:layout_constraintBottom_toBottomOf="@+id/imageView3"
         app:layout_constraintEnd_toEndOf="@id/imageView3"
         app:layout_constraintStart_toStartOf="@id/imageView3"
@@ -103,9 +125,9 @@
         android:layout_width="320dp"
         android:layout_height="64dp"
         android:layout_marginTop="8dp"
+        android:elevation="50dp"
         android:selectAllOnFocus="false"
         android:text="Sign In"
-        android:elevation="50dp"
         android:textAlignment="center"
         android:textAllCaps="false"
         app:cornerRadius="3dp"
@@ -121,10 +143,10 @@
         android:layout_width="320dp"
         android:layout_height="64dp"
         android:layout_marginTop="4dp"
-        android:selectAllOnFocus="false"
         android:backgroundTint="@color/red_900"
-        android:text="Sign In With Google"
         android:elevation="50dp"
+        android:selectAllOnFocus="false"
+        android:text="Sign In With Google"
         android:textAlignment="center"
         android:textAllCaps="false"
         app:cornerRadius="3dp"
