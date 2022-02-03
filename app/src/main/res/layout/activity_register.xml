@@ -170,11 +170,12 @@
         android:id="@+id/txtBackLoginScreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
         android:drawableStart="@drawable/ic_baseline_arrow_back_24"
         android:text="Return To Login Screen"
         android:textColor="#000000"
         android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="@+id/btnRegisterFacebook"
         app:layout_constraintStart_toStartOf="@+id/btnRegisterFacebook"
         app:layout_constraintTop_toBottomOf="@+id/btnRegisterFacebook" />

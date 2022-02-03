@@ -1,7 +1,6 @@
 package com.buyrak.datamanagmentsystem.LoginAndRegister
 
 import android.content.Intent
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,8 +10,6 @@ import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
 import com.buyrak.datamanagmentsystem.utils.*
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.ktx.Firebase
-import kotlinx.android.synthetic.main.activity_login.*
 
 class RegisterActivity : AppCompatActivity() {
     val getInstance = FirebaseAuth.getInstance()

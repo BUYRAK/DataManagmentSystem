@@ -3,6 +3,7 @@ package com.buyrak.datamanagmentsystem.LoginAndRegister
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import android.widget.Toast
 import com.buyrak.datamanagmentsystem.MainActivity
 import com.buyrak.datamanagmentsystem.R
@@ -17,6 +18,8 @@ class LoginActivity : AppCompatActivity() {
 
         btnLogin.setOnClickListener {
             if (!etMail.text.isNullOrEmpty() && !etPassword.text.isNullOrEmpty()) {
+                imgEtMailLoginError.visibility = View.INVISIBLE
+                imgEtPasswordLoginError.visibility = View.INVISIBLE
                 FirebaseAuth.getInstance()
                     .signInWithEmailAndPassword(etMail.text.toString(), etPassword.text.toString())
                     .addOnCompleteListener {
@@ -41,7 +44,8 @@ class LoginActivity : AppCompatActivity() {
                         }
                     }
             }else{
-
+                imgEtMailLoginError.visibility = View.VISIBLE
+                imgEtPasswordLoginError.visibility = View.VISIBLE
                 Toast.makeText(
                     this@LoginActivity,
                     "Your email address or password is incorrect, please try again.",
@@ -49,7 +53,6 @@ class LoginActivity : AppCompatActivity() {
                 ).show()
             }
         }
-
 
         txtRegisterPage.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
