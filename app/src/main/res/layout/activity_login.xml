@@ -123,7 +123,7 @@
     <Button
         android:id="@+id/btnLogin"
         android:layout_width="320dp"
-        android:layout_height="64dp"
+        android:layout_height="52dp"
         android:layout_marginTop="8dp"
         android:elevation="50dp"
         android:selectAllOnFocus="false"
@@ -141,7 +141,7 @@
     <Button
         android:id="@+id/btnLoginGoogle"
         android:layout_width="320dp"
-        android:layout_height="64dp"
+        android:layout_height="52dp"
         android:layout_marginTop="4dp"
         android:backgroundTint="@color/red_900"
         android:elevation="50dp"
@@ -160,7 +160,7 @@
     <Button
         android:id="@+id/btnLoginFacebook"
         android:layout_width="320dp"
-        android:layout_height="64dp"
+        android:layout_height="52dp"
         android:backgroundTint="#4267B2"
         android:elevation="50dp"
         android:selectAllOnFocus="false"
@@ -174,6 +174,24 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/btnLoginGoogle"
         app:layout_constraintTop_toBottomOf="@+id/btnLoginGoogle" />
+
+    <Button
+        android:id="@+id/btnLoginPhone"
+        android:layout_width="320dp"
+        android:layout_height="52dp"
+        android:backgroundTint="@color/indigo_300"
+        android:elevation="50dp"
+        android:selectAllOnFocus="false"
+        android:text="Sign In With Phone Number"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        app:cornerRadius="3dp"
+        app:icon="@drawable/ic_baseline_smartphone_24"
+        app:iconGravity="textStart"
+        app:layout_constraintEnd_toEndOf="@+id/btnLoginFacebook"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/btnLoginFacebook"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginFacebook" />
 
     <TextView
         android:id="@+id/txtRememberPassword"
@@ -194,9 +212,8 @@
         android:text="Or Create Account"
         android:textColor="#000000"
         android:textSize="18sp"
-        app:layout_constraintEnd_toEndOf="@+id/btnLoginFacebook"
-        app:layout_constraintHorizontal_bias="0.502"
-        app:layout_constraintStart_toStartOf="@+id/btnLoginFacebook"
-        app:layout_constraintTop_toBottomOf="@+id/btnLoginFacebook" />
+        app:layout_constraintEnd_toEndOf="@+id/btnLoginPhone"
+        app:layout_constraintStart_toStartOf="@+id/btnLoginPhone"
+        app:layout_constraintTop_toBottomOf="@+id/btnLoginPhone" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
