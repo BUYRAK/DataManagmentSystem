@@ -71,7 +71,7 @@
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <EditText
-        android:id="@+id/etMailRegister"
+        android:id="@+id/etMailPhoneRegister"
         android:layout_width="320dp"
         android:layout_height="48dp"
         android:layout_marginTop="12dp"
@@ -81,7 +81,7 @@
         android:drawablePadding="5dp"
         android:ems="10"
         android:foreground="@drawable/round_corner_input_one"
-        android:hint=" E-mail"
+        android:hint=" E-mail or Phone Number"
         android:inputType="textEmailAddress"
         android:paddingStart="5dp"
         android:textAllCaps="false"
@@ -105,9 +105,9 @@
         android:paddingStart="5dp"
         android:textAlignment="textStart"
         android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="@+id/etMailRegister"
-        app:layout_constraintStart_toStartOf="@+id/etMailRegister"
-        app:layout_constraintTop_toBottomOf="@+id/etMailRegister" />
+        app:layout_constraintEnd_toEndOf="@+id/etMailPhoneRegister"
+        app:layout_constraintStart_toStartOf="@+id/etMailPhoneRegister"
+        app:layout_constraintTop_toBottomOf="@+id/etMailPhoneRegister" />
 
     <EditText
         android:id="@+id/etPasswordAgainRegister"
@@ -167,9 +167,9 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="@+id/etMailRegister"
-        app:layout_constraintEnd_toStartOf="@+id/etMailRegister"
-        app:layout_constraintTop_toTopOf="@+id/etMailRegister"
+        app:layout_constraintBottom_toBottomOf="@+id/etMailPhoneRegister"
+        app:layout_constraintEnd_toStartOf="@+id/etMailPhoneRegister"
+        app:layout_constraintTop_toTopOf="@+id/etMailPhoneRegister"
         app:srcCompat="@drawable/ic_baseline_warning_24" />
 
     <ImageView

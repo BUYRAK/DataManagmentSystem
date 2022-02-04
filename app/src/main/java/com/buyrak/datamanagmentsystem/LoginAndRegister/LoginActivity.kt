@@ -68,13 +68,6 @@ class LoginActivity : AppCompatActivity() {
             }
         }
         btnLoginFacebook.setOnClickListener{
-            val loginPhoneDialog = View.inflate(this, R.layout.dialog_login_phone, null)
-            val builder = AlertDialog.Builder(this)
-            builder.setView(loginPhoneDialog)
-
-            val dialog = builder.create()
-            dialog.show()
-            dialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
         }
 
 
