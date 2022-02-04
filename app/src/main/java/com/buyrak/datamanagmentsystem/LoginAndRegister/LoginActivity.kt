@@ -1,5 +1,7 @@
 package com.buyrak.datamanagmentsystem.LoginAndRegister
 
+import android.app.AlertDialog
+import android.app.Dialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,11 +17,13 @@ import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
 import kotlinx.android.synthetic.main.activity_login.*
+import kotlinx.android.synthetic.main.dialog_login_phone.*
 import okio.Timeout
 import java.util.concurrent.TimeUnit
 
 class LoginActivity : AppCompatActivity() {
     val getInstance = FirebaseAuth.getInstance()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -63,45 +67,18 @@ class LoginActivity : AppCompatActivity() {
                 ).show()
             }
         }
+        btnLoginFacebook.setOnClickListener{
+            val loginPhoneDialog = View.inflate(this, R.layout.dialog_login_phone, null)
+            val builder = AlertDialog.Builder(this)
+            builder.setView(loginPhoneDialog)
 
-        btnLoginPhone.setOnClickListener{
-            val phoneNumber = "+905423296565"
-            val smsCode = "123456"
-
-            val firebaseAuth = Firebase.auth
-            val firebaseAuthSettings = firebaseAuth.firebaseAuthSettings
-
-            firebaseAuthSettings.setAutoRetrievedSmsCodeForPhoneNumber(phoneNumber, smsCode)
-
-            val options = PhoneAuthOptions.newBuilder(firebaseAuth)
-                .setPhoneNumber(phoneNumber)
-                .setTimeout(60L, TimeUnit.SECONDS)
-                .setActivity(this)
-                .setCallbacks(object : PhoneAuthProvider.OnVerificationStateChangedCallbacks() {
-
-                    override fun onCodeSent(verificationId: String, token: PhoneAuthProvider.ForceResendingToken) {
-
-                    }
-                    override fun onVerificationCompleted(credential: PhoneAuthCredential) {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "User ID: ${FirebaseAuth.getInstance().currentUser!!.uid}",
-                            Toast.LENGTH_SHORT
-                        ).show()
-
-                    }
-
-                    override fun onVerificationFailed(p0: FirebaseException) {
-                        Toast.makeText(
-                            this@LoginActivity,
-                            "Error!!!",
-                            Toast.LENGTH_SHORT
-                        ).show()
-                    }
-                })
-                .build()
-            PhoneAuthProvider.verifyPhoneNumber(options)
+            val dialog = builder.create()
+            dialog.show()
+            dialog.window!!.setBackgroundDrawableResource(android.R.color.transparent)
         }
+
+
+
 
         txtRegisterPage.setOnClickListener {
             startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))

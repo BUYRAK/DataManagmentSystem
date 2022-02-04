@@ -9,7 +9,12 @@ import com.buyrak.datamanagmentsystem.R
 import com.google.firebase.auth.FirebaseAuth
 import kotlinx.android.synthetic.main.activity_register.*
 import com.buyrak.datamanagmentsystem.utils.*
+import com.google.firebase.FirebaseException
+import com.google.firebase.auth.PhoneAuthCredential
+import com.google.firebase.auth.PhoneAuthOptions
+import com.google.firebase.auth.PhoneAuthProvider
 import com.google.firebase.database.FirebaseDatabase
+import java.util.concurrent.TimeUnit
 
 class RegisterActivity : AppCompatActivity() {
     val getInstance = FirebaseAuth.getInstance()
@@ -22,29 +27,44 @@ class RegisterActivity : AppCompatActivity() {
                         imgEtMailRegisterError.visibility = View.INVISIBLE
                         imgEtPasswordRegisterError.visibility = View.INVISIBLE
                         imgEtPasswordTwoRegisterError.visibility = View.INVISIBLE
-                        getInstance.createUserWithEmailAndPassword(etMailRegister.text.toString(), etPasswordRegister.text.toString())
-                            .addOnCompleteListener{
-                                if (it.isSuccessful){
-                                    val user = User(
-                                        userId = FirebaseAuth.getInstance().currentUser!!.uid,
-                                        email = etMailRegister.text.toString(),
-                                        fullName = "No Information",
-                                        phone = "No Information",
-                                        profilePhoto = "default_user.jpg",
-                                        role = "1"
-                                    )
-                                    FirebaseDatabase.getInstance().reference
-                                        .child("users")
-                                        .child(FirebaseAuth.getInstance().currentUser!!.uid)
-                                        .setValue(user)
-                                    Functions.sendAuthMail(this@RegisterActivity)
-                                    startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
-                                    overridePendingTransition(R.anim.left_slide, R.anim.slide_to_right)
+                        if (etMailRegister.text.toString().contains("@", true )){
+                            getInstance.createUserWithEmailAndPassword(etMailRegister.text.toString(), etPasswordRegister.text.toString())
+                                .addOnCompleteListener{
+                                    if (it.isSuccessful){
+                                        val user = User(
+                                            userId = FirebaseAuth.getInstance().currentUser!!.uid,
+                                            email = etMailRegister.text.toString(),
+                                            fullName = "No Information",
+                                            phone = "No Information",
+                                            profilePhoto = "default_user.jpg",
+                                            role = "1"
+                                        )
+                                        FirebaseDatabase.getInstance().reference
+                                            .child("users")
+                                            .child(FirebaseAuth.getInstance().currentUser!!.uid)
+                                            .setValue(user)
+                                        Functions.sendAuthMail(this@RegisterActivity)
+                                        startActivity(Intent(this@RegisterActivity, LoginActivity::class.java))
+                                        overridePendingTransition(R.anim.left_slide, R.anim.slide_to_right)
 
-                                }else{
-                                    Toast.makeText(this@RegisterActivity,"An error occurred while registering. Please try again later.", Toast.LENGTH_LONG).show()
+                                    }else{
+                                        Toast.makeText(this@RegisterActivity,"An error occurred while registering. Please try again later.", Toast.LENGTH_LONG).show()
+                                    }
                                 }
-                            }
+                        }else{
+
+                            var phoneNumber = etMailRegister.text.toString()
+
+                            val options = PhoneAuthOptions.newBuilder(getInstance)
+                                .setPhoneNumber(phoneNumber)
+                                .setActivity(this)
+                                .setTimeout(30L, TimeUnit.SECONDS)
+                                .setCallbacks(mCallBack)
+                                .build()
+                            PhoneAuthProvider.verifyPhoneNumber(options)
+
+                        }
+
                     }else{
                         imgEtPasswordRegisterError.visibility = View.VISIBLE
                         imgEtPasswordTwoRegisterError.visibility = View.VISIBLE
@@ -68,6 +88,35 @@ class RegisterActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.left_slide, R.anim.slide_to_right)
         }
     }
+
+    val mCallBack: PhoneAuthProvider.OnVerificationStateChangedCallbacks =
+        object: PhoneAuthProvider.OnVerificationStateChangedCallbacks(){
+            override fun onCodeSent(p0: String, p1: PhoneAuthProvider.ForceResendingToken) {
+                super.onCodeSent(p0, p1)
+                Toast.makeText(
+                    this@RegisterActivity,
+                    "Success!!!",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+            override fun onVerificationCompleted(p0: PhoneAuthCredential) {
+                Toast.makeText(
+                    this@RegisterActivity,
+                    "Success!!! User Register",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+            override fun onVerificationFailed(p0: FirebaseException) {
+                Toast.makeText(
+                    this@RegisterActivity,
+                    "${p0.message}",
+                    Toast.LENGTH_LONG
+                ).show()
+            }
+
+        }
+
 
 
     override fun onBackPressed() {
