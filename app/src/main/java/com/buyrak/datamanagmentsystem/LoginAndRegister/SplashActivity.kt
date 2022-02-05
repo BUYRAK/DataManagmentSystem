@@ -19,26 +19,19 @@ class SplashActivity : AppCompatActivity() {
         object : CountDownTimer(3000,1000){
 
             override fun onFinish() {
-             /*   if (FirebaseAuth.getInstance().currentUser != null){
-                    var intent = Intent(this@SplashActivity, MainActivity::class.java)
-                    startActivity(intent)
+
+                if (FirebaseAuth.getInstance().currentUser != null){
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                     finish()
                 }else{
-                    var intent = Intent(this@SplashActivity, LoginActivity::class.java)
-                    startActivity(intent)
+                    startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                     finish()
                 }
-              */
-                var intent = Intent(this@SplashActivity, LoginActivity::class.java)
-                startActivity(intent)
+                startActivity(Intent(this@SplashActivity, MainActivity::class.java))
                 finish()
-
-
             }
 
-            override fun onTick(millisUntilFinished: Long) {
-
-            }
+            override fun onTick(millisUntilFinished: Long) {}
 
         }.start()
         super.onResume()

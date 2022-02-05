@@ -10,18 +10,22 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.DataManagmentSystem">
         <activity
+            android:name=".SettingsOperations.SettingsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".TasksOperations.TasksActivity"
+            android:exported="false" />
+        <activity
             android:name=".Profile.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginAndRegister.SplashActivity"
-            android:exported="true" >
-
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".LoginAndRegister.RememberActivity"
@@ -31,12 +35,10 @@
             android:exported="false" />
         <activity
             android:name=".LoginAndRegister.LoginActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".MainOperations.MainActivity"
-            android:exported="false">
-        </activity>
+            android:exported="false" />
 
         <meta-data
             android:name="preloaded_fonts"
