@@ -39,10 +39,10 @@
         app:layout_constraintTop_toTopOf="@+id/view" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
+        android:layout_height="110dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/view">
 
@@ -50,8 +50,8 @@
             android:id="@+id/imgProfilePhoto"
             android:layout_width="92dp"
             android:layout_height="wrap_content"
-            android:src="@drawable/profile_photo_woman"
             android:layout_marginStart="12dp"
+            android:src="@drawable/profile_photo_woman"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
@@ -61,21 +61,51 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="24dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="14dp"
             android:text="John Doe"
-            android:textStyle="bold"
             android:textSize="16sp"
+            android:textStyle="bold"
             app:layout_constraintStart_toEndOf="@+id/imgProfilePhoto"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view4"
+            android:layout_width="50dp"
+            android:layout_height="1dp"
+            android:foreground="@color/black"
+            app:layout_constraintBottom_toTopOf="@+id/txtProfileMailAddress"
+            app:layout_constraintStart_toStartOf="@+id/txtProfileDisplayName"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileDisplayName" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_email_24"
+            app:layout_constraintBottom_toBottomOf="@+id/txtProfileMailAddress"
+
+            app:layout_constraintStart_toStartOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="@+id/txtProfileMailAddress" />
+
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="wrap_content"
+            android:layout_height="24dp"
+            android:src="@drawable/ic_baseline_phone_android_24"
+            app:layout_constraintBottom_toBottomOf="@+id/txtProfilePhoneNumber"
+            app:layout_constraintStart_toStartOf="@+id/view4"
+            app:layout_constraintTop_toTopOf="@+id/txtProfilePhoneNumber" />
 
         <TextView
             android:id="@+id/txtProfileMailAddress"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="4dp"
             android:layout_marginTop="32dp"
             android:text="test@usermail.com"
-            app:layout_constraintStart_toEndOf="@+id/imgProfilePhoto"
+            android:textSize="16sp"
+            app:layout_constraintStart_toEndOf="@+id/imageView"
             app:layout_constraintTop_toTopOf="@id/txtProfileDisplayName" />
 
         <TextView
@@ -88,7 +118,26 @@
             app:layout_constraintStart_toStartOf="@+id/txtProfileMailAddress"
             app:layout_constraintTop_toTopOf="@id/txtProfileMailAddress" />
 
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/round_corner_splash"
+            android:src="@drawable/ic_baseline_edit_24"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/txtProfileDisplayName" />
+
     </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <ListView
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/view3"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayout">
+    </ListView>
+
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
