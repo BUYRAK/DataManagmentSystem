@@ -16,12 +16,13 @@
         <entry key="app/src/main/res/drawable/ic_facebook_brands.xml" value="0.41041666666666665" />
         <entry key="app/src/main/res/drawable/navigation_view_selector.xml" value="0.234" />
         <entry key="app/src/main/res/drawable/round_corner_dialog.xml" value="0.2735" />
-        <entry key="app/src/main/res/drawable/round_corner_splash.xml" value="0.3963541666666667" />
+        <entry key="app/src/main/res/drawable/round_corner_splash.xml" value="0.15950164794921876" />
+        <entry key="app/src/main/res/drawable/round_profile_photo.xml" value="0.234" />
         <entry key="app/src/main/res/font/dosis_extralight.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/font/montserrat_subrayada.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/font/righteous.xml" value="0.4244791666666667" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.38697916666666665" />
-        <entry key="app/src/main/res/layout/activity_main.xml" value="0.39427083333333335" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.30114949544270836" />
         <entry key="app/src/main/res/layout/activity_profile.xml" value="0.39427083333333335" />
         <entry key="app/src/main/res/layout/activity_register.xml" value="0.37962962962962965" />
         <entry key="app/src/main/res/layout/activity_remember.xml" value="0.3638888888888889" />
