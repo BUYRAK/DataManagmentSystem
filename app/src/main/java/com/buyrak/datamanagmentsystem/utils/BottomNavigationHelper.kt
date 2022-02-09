@@ -5,6 +5,7 @@ import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import com.buyrak.datamanagmentsystem.MainOperations.MainActivity
+import com.buyrak.datamanagmentsystem.Profile.ProfileActivity
 import com.buyrak.datamanagmentsystem.R
 import com.buyrak.datamanagmentsystem.SettingsOperations.SettingsActivity
 import com.buyrak.datamanagmentsystem.TasksOperations.TasksActivity
@@ -30,8 +31,8 @@ class BottomNavigationHelper {
                             return true
                         }
 
-                        R.id.navigation_settings -> {
-                            val intent = Intent(context, SettingsActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                        R.id.navigation_profile -> {
+                            val intent = Intent(context, ProfileActivity::class.java).addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
                             context.startActivity(intent)
                             return true
                         }
