@@ -22,22 +22,29 @@ class LoginActivity : AppCompatActivity() {
             if (!etMail.text.isNullOrEmpty() && !etPassword.text.isNullOrEmpty()) {
                 imgEtMailLoginError.visibility = View.INVISIBLE
                 imgEtPasswordLoginError.visibility = View.INVISIBLE
-                FirebaseAuth.getInstance()
-                    .signInWithEmailAndPassword(etMail.text.toString(), etPassword.text.toString())
+                FirebaseAuth.getInstance().signInWithEmailAndPassword(etMail.text.toString(), etPassword.text.toString())
                     .addOnCompleteListener {
-                        if(getInstance.currentUser!!.isEmailVerified) {
-                            startActivity(
-                                Intent(
+                        if (it.isSuccessful) {
+                            if (getInstance.currentUser!!.isEmailVerified) {
+                                startActivity(
+                                    Intent(
+                                        this@LoginActivity,
+                                        MainActivity::class.java
+                                    ).setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
+                                )
+                                Toast.makeText(
                                     this@LoginActivity,
-                                    MainActivity::class.java
-                                ).setFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION)
-                            )
-                            Toast.makeText(
-                                this@LoginActivity,
-                                "You have successfully logged in.",
-                                Toast.LENGTH_LONG
-                            ).show()
-                        }else {
+                                    "You have successfully logged in.",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            } else {
+                                Toast.makeText(
+                                    this@LoginActivity,
+                                    "Please verify email address.",
+                                    Toast.LENGTH_LONG
+                                ).show()
+                            }
+                        }else{
                             imgEtMailLoginError.visibility = View.VISIBLE
                             imgEtPasswordLoginError.visibility = View.VISIBLE
                             Toast.makeText(
