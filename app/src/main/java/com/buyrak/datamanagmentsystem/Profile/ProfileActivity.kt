@@ -32,7 +32,6 @@ class ProfileActivity : AppCompatActivity() {
        // txtProfileDisplayName.text =
         // referanceUser.child(currentUser!!.uid).orderByChild("email").limitToFirst(1).toString()
 
-
     }
 
     override fun onBackPressed() {
