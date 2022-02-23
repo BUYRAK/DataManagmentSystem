@@ -16,7 +16,7 @@
             android:name=".TasksOperations.TasksActivity"
             android:exported="false" />
         <activity
-            android:name=".Profile.ProfileActivity"
+            android:name=".ProfileOperations.ProfileActivity"
             android:exported="false" />
         <activity
             android:name=".LoginAndRegister.SplashActivity"

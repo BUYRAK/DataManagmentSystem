@@ -5,9 +5,8 @@ import android.content.Intent
 import android.view.Menu
 import android.view.MenuItem
 import com.buyrak.datamanagmentsystem.MainOperations.MainActivity
-import com.buyrak.datamanagmentsystem.Profile.ProfileActivity
+import com.buyrak.datamanagmentsystem.ProfileOperations.ProfileActivity
 import com.buyrak.datamanagmentsystem.R
-import com.buyrak.datamanagmentsystem.SettingsOperations.SettingsActivity
 import com.buyrak.datamanagmentsystem.TasksOperations.TasksActivity
 import com.google.android.material.bottomnavigation.BottomNavigationView
 
