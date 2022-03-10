@@ -20,25 +20,25 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         BottomNavigationHelper.setUpNavigationView(this, bottomNavigationView,  bottomNavigationView.menu, ACTIVITY_NO)
-        readUserData()
-      }
+    }
 
     private fun readUserData(){
-        var referance = FirebaseDatabase.getInstance().reference
-        var user = FirebaseAuth.getInstance().currentUser
+        val referance = FirebaseDatabase.getInstance().reference
+        val user = FirebaseAuth.getInstance().currentUser
 
-        var query = referance.child("users")
+        val query = referance.child("users")
             .orderByKey()
             .equalTo(user!!.uid)
+
         query.addListenerForSingleValueEvent(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-
                 for (singleSnapshot in snapshot.children){
                     var readUser = singleSnapshot.getValue(User::class.java)
-                   Log.e("","${readUser!!.fullName}")
+                    txtProfileDisplayName.text = readUser!!.fullName
+                    txtProfileMailAddress.text = readUser.email
+                    txtProfilePhoneNumber.text = readUser.phone
                 }
             }
-
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
             }
