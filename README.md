@@ -12,7 +12,7 @@ design and coding by me
   <a href="https://console.firebase.google.com/">Firebase</a>
 
 <hr>
-<div style="float:left">
+<div style="float:center">
   <h4> In app images </h4>
-<img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/datamanagmentsystem.jpg" width="50%">
+<img src="https://github.com/BUYRAK/DataManagmentSystem/blob/master/screenshots/datamanagmentsystem.jpg">
 <div>
