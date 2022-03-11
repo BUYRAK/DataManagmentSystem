@@ -4,7 +4,6 @@ import android.content.Context
 import android.widget.Toast
 import com.google.firebase.auth.FirebaseAuth
 class Functions {
-
     companion object{
         var currentUser = FirebaseAuth.getInstance().currentUser
         fun sendAuthMail(context:Context){

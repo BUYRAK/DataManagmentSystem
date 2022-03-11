@@ -7,6 +7,28 @@
     tools:context=".TasksOperations.TasksActivity">
 
     <View
+        android:id="@+id/view6"
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:background="@color/primaryColor"
+        app:layout_constraintEnd_toEndOf="@+id/bottomNavigationView"
+        app:layout_constraintStart_toStartOf="@+id/bottomNavigationView"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView12"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tasks"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/view6"
+        app:layout_constraintEnd_toEndOf="@+id/view6"
+        app:layout_constraintStart_toStartOf="@+id/view6"
+        app:layout_constraintTop_toTopOf="@+id/view6" />
+
+    <View
         android:layout_width="wrap_content"
         android:layout_height="1dp"
         android:background="#65C2C2C2"

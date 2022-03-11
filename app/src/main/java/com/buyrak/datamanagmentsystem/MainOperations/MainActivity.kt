@@ -5,6 +5,8 @@ import android.os.Bundle
 import com.buyrak.datamanagmentsystem.R
 import com.buyrak.datamanagmentsystem.utils.BottomNavigationHelper
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_main.bottomNavigationView
+
 
 class MainActivity : AppCompatActivity() {
     val ACTIVITY_NO = 0
